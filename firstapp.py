@@ -9,7 +9,7 @@ location = st.text_input('Write a city name:', '')
 url = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + APIkey + '&units=metric'
 response = requests.get(url)  
 weatherData = json.loads(response.text)
-st.text('Today\'s high is:', ['main']['temp_max'], 'and today\'s low is:', ['main']['temp_min'])
+st.write('Today\'s high is:', ['main']['temp_max'], 'and today\'s low is:', ['main']['temp_min'], '.')
 
 title = st.text_input("Please insert a movie title:", '')
 st.write('The current movie title is:', title)
