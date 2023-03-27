@@ -1,5 +1,5 @@
 import streamlit as st
-st.header("FUCKIN HELLO YE CUNTS")
+st.header("HELLO WORLD")
 st.text("from Bressanone")
 
 
