@@ -2,7 +2,7 @@ import streamlit as st
 st.header("HELLO WORLD")
 st.text("from Bressanone")
 
-
+st.write("If it gives you an error, just enter a city anyway. It should function at that point.")
 
 import json, requests 
 import streamlit as st
