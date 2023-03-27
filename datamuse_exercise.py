@@ -25,24 +25,20 @@ dataFromDatamuse_sl = json.loads(response_sl.text)
 
 st.write(criterion)
 
-if criterion == "Rhymes":
-  st.write('Words that rhyme with', keyword, 'are:', dataFromDatamuse_rhy)
-
-if criterion == "Synonyms":
-  st.write('Synonym\'s of', keyword, 'are:', dataFromDatamuse_syn)
-
-if criterion == "Antonyms":
-  st.write('Antonym\'s of', keyword, 'are:', dataFromDatamuse_ant)
-
-if criterion == "Sounds Similar":
-  st.write('Words that sound like', keyword, 'are:', dataFromDatamuse_sl)
-  
-if criterion == "Means Like":
-  st.write('Words that have similar meanings with', keyword, 'are:', dataFromDatamuse_ml)
-
-if criterion == "All":
-  st.write('Synonym\'s of', keyword, 'are:', dataFromDatamuse_syn)
-  st.write('Antonym\'s of', keyword, 'are:', dataFromDatamuse_ant)
-  st.write('Words that rhyme with', keyword, 'are:', dataFromDatamuse_rhy)
-  st.write('Words that have similar meanings with', keyword, 'are:', dataFromDatamuse_ml)
-  st.write('Words that sound like', keyword, 'are:', dataFromDatamuse_sl)
+for x in criterion:
+  if criterion == "Rhymes":
+    st.write('Words that rhyme with', keyword, 'are:', dataFromDatamuse_rhy)
+  if criterion == "Synonyms":
+    st.write('Synonym\'s of', keyword, 'are:', dataFromDatamuse_syn)
+  if criterion == "Antonyms":
+    st.write('Antonym\'s of', keyword, 'are:', dataFromDatamuse_ant)
+  if criterion == "Sounds Similar":
+    st.write('Words that sound like', keyword, 'are:', dataFromDatamuse_sl)
+  if criterion == "Means Like":
+    st.write('Words that have similar meanings with', keyword, 'are:', dataFromDatamuse_ml)
+  if criterion == "All":
+    st.write('Synonym\'s of', keyword, 'are:', dataFromDatamuse_syn)
+    st.write('Antonym\'s of', keyword, 'are:', dataFromDatamuse_ant)
+    st.write('Words that rhyme with', keyword, 'are:', dataFromDatamuse_rhy)
+    st.write('Words that have similar meanings with', keyword, 'are:', dataFromDatamuse_ml)
+    st.write('Words that sound like', keyword, 'are:', dataFromDatamuse_sl)
