@@ -46,4 +46,4 @@ if genre == 'Comedy':
 elif genre == 'Drama':
      st.write('I mean fair enough. Ur still a sensitive bitch tho OG.')
 else:
-     st.write("Ur a funkin nerd.")
+     st.write("Ur a fuckin nerd.")
