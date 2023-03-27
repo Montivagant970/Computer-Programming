@@ -45,3 +45,4 @@ for x in criterion:
     st.write('Words that rhyme with', keyword, 'are:', dataFromDatamuse_rhy)
     st.write('Words that have similar meanings with', keyword, 'are:', dataFromDatamuse_ml)
     st.write('Words that sound like', keyword, 'are:', dataFromDatamuse_sl)
+    st.write('Words that are spelled similar to', keyword, 'are:', dataFromDatamuse_sp)
