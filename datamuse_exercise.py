@@ -23,8 +23,6 @@ dataFromDatamuse_rhy = json.loads(response_rhy.text)
 dataFromDatamuse_ml = json.loads(response_ml.text)
 dataFromDatamuse_sl = json.loads(response_sl.text)
 
-st.write(criterion)
-
 for x in criterion:
   if x == "Rhymes":
     st.write('Words that rhyme with', keyword, 'are:', dataFromDatamuse_rhy)
