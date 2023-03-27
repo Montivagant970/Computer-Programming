@@ -1,5 +1,4 @@
 import json,requests
-from pprint import pprint
 import streamlit as st
 
 st.header("Welcome to the app which searchs rhymes, synonyms, antonyms, and related words to a given input!")
