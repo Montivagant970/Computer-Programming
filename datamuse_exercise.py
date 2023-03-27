@@ -3,6 +3,7 @@ import streamlit as st
 
 st.header("Welcome to the app which searchs rhymes, synonyms, antonyms, and related words to a given input!")
 
+criterion = st.multiselect("What would you like to search", ("Rhymes", "Synonyms", "Antonyms", "Sounds Similar", "Means Like", "All"), default=None, format_func=special_internal_function)
 keyword = st.text_input('Please provide a keyword to search:', '')
 url_rhy= 'https://api.datamuse.com/words?rel_rhy=' + keyword
 url_ml= 'https://api.datamuse.com/words?ml=' + keyword
@@ -22,8 +23,37 @@ dataFromDatamuse_rhy = json.loads(response_rhy.text)
 dataFromDatamuse_ml = json.loads(response_ml.text)
 dataFromDatamuse_sl = json.loads(response_sl.text)
 
-st.write('Synonym\'s of', keyword, 'are:', dataFromDatamuse_syn)
-st.write('Antonym\'s of', keyword, 'are:', dataFromDatamuse_ant)
-st.write('Words that rhyme with', keyword, 'are:', dataFromDatamuse_rhy)
-st.write('Words that have similar meanings with', keyword, 'are:', dataFromDatamuse_ml)
-st.write('Words that sound like', keyword, 'are:', dataFromDatamuse_sl)
+if criterion = "Rhymes":
+  st.write('Words that rhyme with', keyword, 'are:', dataFromDatamuse_rhy)
+else:
+  none
+
+if criterion = "Synonyms":
+  st.write('Synonym\'s of', keyword, 'are:', dataFromDatamuse_syn)
+else:
+  none
+
+if criterion = "Antonyms":
+  st.write('Antonym\'s of', keyword, 'are:', dataFromDatamuse_ant)
+else:
+  none
+
+if criterion = "Sounds Similar":
+  st.write('Words that sound like', keyword, 'are:', dataFromDatamuse_sl)
+else:
+  none
+  
+if criterion = "Means Like":
+  st.write('Words that have similar meanings with', keyword, 'are:', dataFromDatamuse_ml)
+else:
+  none
+
+if criterion = "All":
+  st.write('Synonym\'s of', keyword, 'are:', dataFromDatamuse_syn)
+  st.write('Antonym\'s of', keyword, 'are:', dataFromDatamuse_ant)
+  st.write('Words that rhyme with', keyword, 'are:', dataFromDatamuse_rhy)
+  st.write('Words that have similar meanings with', keyword, 'are:', dataFromDatamuse_ml)
+  st.write('Words that sound like', keyword, 'are:', dataFromDatamuse_sl)
+else:
+  none
+
