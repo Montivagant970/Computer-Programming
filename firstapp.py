@@ -43,5 +43,7 @@ import streamlit as st
 genre = st.radio("What's your favorite movie genre?",('Comedy', 'Drama', 'Documentary'))
 if genre == 'Comedy':
      st.write('You selected comedy.')
+elif genre == 'Drama':
+     st.write('I mean fair enough. Ur still a sensitive bitch tho OG.')
 else:
      st.write("Ur a funkin nerd.")
