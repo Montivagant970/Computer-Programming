@@ -11,7 +11,7 @@ location = st.text_input('Write a city name:', '')
 url = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + APIkey + '&units=metric'
 response = requests.get(url)  
 weatherData = json.loads(response.text)
-st.write('Today\'s high is:', ['main']['temp_max'], 'and today\'s low is:', ['main']['temp_min'], '.')
+st.write('Today\'s high is:', weatherData['main']['temp_max'], 'and today\'s low is:', weatherData['main']['temp_min'], '.')
 
 
 
@@ -30,7 +30,7 @@ APIkey = 'b0dc5ff479faf43dff849169f51ad2b0'
 url = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + APIkey + '&units=metric'
 response = requests.get(url)  
 weatherData = json.loads(response.text)
-st.write('Today\'s high in is:', ['main']['temp_max'], 'and today\'s low is:', ['main']['temp_min'], 'in', location, '.')
+st.write('Today\'s high in is:', weatherData['main']['temp_max'], 'and today\'s low is:', weatherData['main']['temp_min'], 'in', location, '.')
 
 
 
