@@ -44,4 +44,4 @@ genre = st.radio("What's your favorite movie genre?",('Comedy', 'Drama', 'Docume
 if genre == 'Comedy':
      st.write('You selected comedy.')
 else:
-     st.write("You didn't select comedy.")
+     st.write("Ur a funkin nerd.")
