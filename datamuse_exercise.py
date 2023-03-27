@@ -34,7 +34,7 @@ for x in criterion:
   if x == "Antonyms":
     st.write('Antonym\'s of', keyword, 'are:', dataFromDatamuse_ant)
   if x == "Sounds Similar":
-    st.write('Words that sound like', keyword, 'are:', dataFromDatamuse_sl)
+    st.write('Words that sound similar to', keyword, 'are:', dataFromDatamuse_sl)
   if x == "Means Like":
     st.write('Words that have similar meanings with', keyword, 'are:', dataFromDatamuse_ml)
   if x == "Spelled Like":
