@@ -3,7 +3,7 @@ import streamlit as st
 
 st.header("Welcome to the app which searchs rhymes, synonyms, antonyms, and related words to a given input!")
 
-criterion = st.multiselect("What would you like to search", ("Rhymes", "Synonyms", "Antonyms", "Sounds Similar", "Means Like", "All"), default=None, format_func=special_internal_function)
+criterion = st.multiselect("What would you like to search", ("Rhymes", "Synonyms", "Antonyms", "Sounds Similar", "Means Like", "All"), default=None)
 keyword = st.text_input('Please provide a keyword to search:', '')
 url_rhy= 'https://api.datamuse.com/words?rel_rhy=' + keyword
 url_ml= 'https://api.datamuse.com/words?ml=' + keyword
