@@ -4,6 +4,8 @@ from googletrans import Translator
 import streamlit as st
 translator = Translator()
 
+st.header("Here's a translator and text-to-speech all in one app!")
+
 text_input = st.text_input('Write some text to be translated and made into an audio:')
 lang_code = st.text_input('Enter a two letter language code for translation (en - English, de - Deutsch, it - italiano):')
 
