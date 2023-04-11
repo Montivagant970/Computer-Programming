@@ -1,5 +1,4 @@
-from gtts import gTTS
-import IPython.display as ipd 
+from gtts import gTTS 
 from googletrans import Translator
 import streamlit as st
 translator = Translator()
