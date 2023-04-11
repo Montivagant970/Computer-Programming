@@ -14,4 +14,4 @@ text_trans = translator.translate(text_input, dest=lang_code)
 tts1=gTTS(text=text_trans.text, lang=lang_code)
 tts1.save('user_audio.mp3')
 
-st.audio('user_audio.mp3',autoplay=False))
+st.audio(data='user_audio.mp3', format='audio/mp3', start_time=0)
