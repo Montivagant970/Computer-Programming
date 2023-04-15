@@ -9,8 +9,8 @@ criterion = st.multiselect("Which resources do you need?", ("Translation", "Pron
 source_lang = st.text_input('Translate from: (de - German, it - Italian, en - English')
 dest_lang = st.text_input('Translate into: (de - German, it - Italian, en - English')
 
-st.text('Please enter a word:')
-user_input = st.text_input()
+st.text('PLEASE ENTER A WORD:')
+user_input = st.text_input('')
 #TO ADD SPEECH TO TEXT 
 
 if (user_input):
