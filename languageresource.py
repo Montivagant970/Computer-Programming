@@ -25,7 +25,7 @@ for x in source_lang:
   else:
     st.write("Your language is not available at this time."
 
-if (criterion):
+if criterion != None:
   for z in criterion:
     if z == "Translation" or "All":
       dest_lang = st.text_input('Into which language would you like to translate?:')
