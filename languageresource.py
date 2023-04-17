@@ -1,29 +1,96 @@
 import streamlit as st
+import json, requests
 from googletrans import Translator
-from gtts import gTTS 
+from gtts import gTTS
+from wiktionaryparser import WiktionaryParser
+
+#tools:
 translator = Translator()
+parser = WiktionaryParser()
 
 st.header("Speed Reference")
 
-criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Conjugations/Declensions", "Etymology", "All"), default=None)
+criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "All"), default=None)
 
-source_lang = st.text_input('Translate from: (de - German, it - Italian, en - English')
-dest_lang = st.text_input('Translate into: (de - German, it - Italian, en - English')
+#Setting Languages:
+source_lang = st.text_input('What language is the source material?:')
+dest_lang = st.text_input('In which language would you like to recieve the information?:')
 
-st.text('PLEASE ENTER A WORD:')
+source_lang = source_lang.lower()
+dest_lang = dest_lang.lower()
+
+if source_lang == 'german' or 'deutsch':
+  source_lang_trans = 'de'
+else: None
+if source_lang == 'italian' or 'italiano':
+  source_lang_trans = 'it'
+else: None
+if source_lang == 'english':
+  source_lang_trans = 'en'
+else: None
+
+if dest_lang == 'german' or 'deutsch':
+  dest_lang_trans = 'de'
+else: None
+if dest_lang == 'italian' or 'italiano':
+  dest_lang_trans = 'it'
+else: None
+if source_lang == 'english':
+  dest_lang_trans = 'en'
+else: None
+
+st.header('PLEASE ENTER A WORD:')
 user_input = st.text_input('')
+
+#url_lang_info = 'https://api.dictionaryapi.dev/api/v2/entries/' + dest_lang + '/' + user_input
+#lang_info_resp = requests.get(url_lang_info)
+#json.loads(lang_info_resp.text)
+
 #TO ADD SPEECH TO TEXT 
 
 if (user_input):
   for x in criterion:
     if x == "Translation":
-      input_trans = translator.translate(user_input, src = source_lang, dest = dest_lang)
+      input_trans = translator.translate(user_input, src = source_lang_trans, dest = dest_lang_trans)
       st.write('Translation:', input_trans.text)
 
     if x == "Pronunciation":
-      input_trans = translator.translate(user_input, src = source_lang, dest = dest_lang)
+      input_trans = translator.translate(user_input, src = source_lang_trans, dest = dest_lang_trans)
 
-      tts = gTTS(text = input_trans.text, lang = dest_lang)
+      tts = gTTS(text = input_trans.text, lang = dest_lang_trans)
       tts.save('user_audio.mp3')
 
+      st.write("Pronunciation:")
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
+
+    #if x == "Same-Language Definition":
+    
+    if x == "Grammatical Information (Conjugations/Declensions)":
+      gramm_info = parser.fetch(user_input, source_lang)
+      st.write(gramm_info[0]['definitions'][0]['text'][0])
+
+    if x == "Etymology":
+      ety_info = parser.fetch(user_input, source_lang)
+      st.write(ety_info[0]['etymology'])
+
+    if x == "All":
+      #Translator
+      input_trans = translator.translate(user_input, src = source_lang_trans, dest = dest_lang_trans)
+      st.write('Translation:', input_trans.text)
+
+      #Pronunciation
+      tts = gTTS(text = input_trans.text, lang = dest_lang_trans)
+      tts.save('user_audio.mp3')
+
+      st.write("Pronunciation:")
+      st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
+
+      #Same-Language Definition:
+
+      #Grammatical Information:
+      gramm_info = parser.fetch(user_input, source_lang)
+      st.write('Grammatical Information:', gramm_info[0]['definitions'][0]['text'][0])
+
+      #Etymology:
+      ety_info = parser.fetch(user_input, source_lang)
+      st.write('Etymology:', ety_info[0]['etymology'])
