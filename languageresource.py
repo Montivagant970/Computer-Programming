@@ -14,11 +14,7 @@ criterion = st.multiselect("Which resources do you need?", ("Translation", "Pron
 
 #Setting Languages:
 source_lang = st.text_input('What language is the source material?:')
-dest_lang = st.text_input('In which language would you like to recieve the information?:')
-
 source_lang = source_lang.lower()
-dest_lang = dest_lang.lower()
-
 for x in source_lang:
   if source_lang == 'german' or 'deutsch':
     source_lang_trans = 'de'
@@ -27,13 +23,18 @@ for x in source_lang:
   if source_lang == 'english':
     source_lang_trans = 'en'
 
-for y in dest_lang:
-  if dest_lang == 'german' or 'deutsch':
-    dest_lang_trans = 'de'
-  if dest_lang == 'italian' or 'italiano':
-    dest_lang_trans = 'it'
-  if source_lang == 'english':
-    dest_lang_trans = 'en'
+if (criterion):
+  for z in criterion:
+    if z == "Translation" or "Pronunciation":
+      dest_lang = st.text_input('In which language would you like to recieve the information?:')
+      dest_lang = dest_lang.lower()
+      for y in dest_lang:
+        if dest_lang == 'german' or 'deutsch':
+          dest_lang_trans = 'de'
+        if dest_lang == 'italian' or 'italiano':
+          dest_lang_trans = 'it'
+        if dest_lang == 'english':
+          dest_lang_trans = 'en'
 
 st.header('PLEASE ENTER A WORD:')
 user_input = st.text_input('')
