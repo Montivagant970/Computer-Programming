@@ -25,19 +25,19 @@ for x in source_lang:
   else:
     st.write("Your language is not available at this time."
 
-if criterion != None:
-  for z in criterion:
-    if z == "Translation" or "All":
-      dest_lang = st.text_input('Into which language would you like to translate?:')
-      dest_lang = dest_lang.lower()
-      if (dest_lang):
-        for y in dest_lang:
-          if dest_lang == 'german' or 'deutsch':
-            dest_lang_trans = 'de'
-          elif dest_lang == 'italian' or 'italiano':
-            dest_lang_trans = 'it'
-          elif dest_lang == 'english':
-            dest_lang_trans = 'en'
+#if (criterion):
+  #for z in criterion:
+    #if z == "Translation" or "All":
+      #dest_lang = st.text_input('Into which language would you like to translate?:')
+      #dest_lang = dest_lang.lower()
+      #if (dest_lang):
+        #for y in dest_lang:
+          #if dest_lang == 'german' or 'deutsch':
+            #dest_lang_trans = 'de'
+         # elif dest_lang == 'italian' or 'italiano':
+           # dest_lang_trans = 'it'
+    #      elif dest_lang == 'english':
+  #          dest_lang_trans = 'en'
 
 st.header('PLEASE ENTER A WORD:')
 user_input = st.text_input('')
