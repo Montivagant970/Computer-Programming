@@ -52,45 +52,50 @@ if (user_input):
   for x in criterion:
     if x == "Translation":
       input_trans = translator.translate(user_input, src = source_lang_trans, dest = dest_lang_trans)
-      st.write('Translation:', input_trans.text)
+      st.text('Translation:')
+      st.write(input_trans.text)
 
     if x == "Pronunciation":
       input_trans = translator.translate(user_input, src = source_lang_trans, dest = dest_lang_trans)
 
-      tts = gTTS(text = input_trans.text, lang = dest_lang_trans)
+      tts = gTTS(text = input_trans.text, lang = source_lang_trans)
       tts.save('user_audio.mp3')
 
-      st.write("Pronunciation:")
+      st.text("Pronunciation:")
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
     #if x == "Same-Language Definition":
-    
     if x == "Grammatical Information (Conjugations/Declensions)":
       gramm_info = parser.fetch(user_input, source_lang)
+      st.text('Grammatical Information:')
       st.write(gramm_info[0]['definitions'][0]['text'][0])
 
     if x == "Etymology":
       ety_info = parser.fetch(user_input, source_lang)
+      st.text('Etymology:')
       st.write(ety_info[0]['etymology'])
 
     if x == "All":
       #Translator
       input_trans = translator.translate(user_input, src = source_lang_trans, dest = dest_lang_trans)
+      st.text('Translation:')
       st.write('Translation:', input_trans.text)
 
       #Pronunciation
-      tts = gTTS(text = input_trans.text, lang = dest_lang_trans)
+      tts = gTTS(text = input_trans.text, lang = source_lang_trans)
       tts.save('user_audio.mp3')
 
-      st.write("Pronunciation:")
+      st.text("Pronunciation:")
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
       #Same-Language Definition:
 
       #Grammatical Information:
       gramm_info = parser.fetch(user_input, source_lang)
-      st.write('Grammatical Information:', gramm_info[0]['definitions'][0]['text'][0])
+      st.text('Grammatical Information:')
+      st.write(gramm_info[0]['definitions'][0]['text'][0])
 
       #Etymology:
       ety_info = parser.fetch(user_input, source_lang)
-      st.write('Etymology:', ety_info[0]['etymology'])
+      st.text('Etymology:')
+      st.write(ety_info[0]['etymology'])
