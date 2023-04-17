@@ -25,16 +25,17 @@ for x in source_lang:
 
 if (criterion):
   for z in criterion:
-    if z == "Translation" or "Pronunciation":
+    if z == "Translation" or "Pronunciation" or "All":
       dest_lang = st.text_input('In which language would you like to recieve the information?:')
       dest_lang = dest_lang.lower()
-      for y in dest_lang:
-        if dest_lang == 'german' or 'deutsch':
-          dest_lang_trans = 'de'
-        if dest_lang == 'italian' or 'italiano':
-          dest_lang_trans = 'it'
-        if dest_lang == 'english':
-          dest_lang_trans = 'en'
+      if (dest_lang):
+        for y in dest_lang:
+          if dest_lang == 'german' or 'deutsch':
+            dest_lang_trans = 'de'
+          if dest_lang == 'italian' or 'italiano':
+            dest_lang_trans = 'it'
+          if dest_lang == 'english':
+            dest_lang_trans = 'en'
 
 st.header('PLEASE ENTER A WORD:')
 user_input = st.text_input('')
