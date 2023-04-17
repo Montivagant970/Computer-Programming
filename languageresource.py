@@ -26,7 +26,7 @@ for x in source_lang:
 if (criterion):
   for z in criterion:
     if z == "Translation" or "Pronunciation" or "All":
-      dest_lang = st.text_input('In which language would you like to recieve the information?:')
+      dest_lang = st.text_input('Into which language would you like to translate?:')
       dest_lang = dest_lang.lower()
       if (dest_lang):
         for y in dest_lang:
