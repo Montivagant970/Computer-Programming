@@ -19,25 +19,21 @@ dest_lang = st.text_input('In which language would you like to recieve the infor
 source_lang = source_lang.lower()
 dest_lang = dest_lang.lower()
 
-if source_lang == 'german' or 'deutsch':
-  source_lang_trans = 'de'
-else: None
-if source_lang == 'italian' or 'italiano':
-  source_lang_trans = 'it'
-else: None
-if source_lang == 'english':
-  source_lang_trans = 'en'
-else: None
+for x in source_lang:
+  if source_lang == 'german' or 'deutsch':
+    source_lang_trans = 'de'
+  if source_lang == 'italian' or 'italiano':
+    source_lang_trans = 'it'
+  if source_lang == 'english':
+    source_lang_trans = 'en'
 
-if dest_lang == 'german' or 'deutsch':
-  dest_lang_trans = 'de'
-else: None
-if dest_lang == 'italian' or 'italiano':
-  dest_lang_trans = 'it'
-else: None
-if source_lang == 'english':
-  dest_lang_trans = 'en'
-else: None
+for y in dest_lang:
+  if dest_lang == 'german' or 'deutsch':
+    dest_lang_trans = 'de'
+  if dest_lang == 'italian' or 'italiano':
+    dest_lang_trans = 'it'
+  if source_lang == 'english':
+    dest_lang_trans = 'en'
 
 st.header('PLEASE ENTER A WORD:')
 user_input = st.text_input('')
