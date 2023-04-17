@@ -18,10 +18,12 @@ source_lang = source_lang.lower()
 for x in source_lang:
   if source_lang == 'german' or 'deutsch':
     source_lang_trans = 'de'
-  if source_lang == 'italian' or 'italiano':
+  elif source_lang == 'italian' or 'italiano':
     source_lang_trans = 'it'
-  if source_lang == 'english':
+  elif source_lang == 'english':
     source_lang_trans = 'en'
+  else:
+    st.write("Your language is not available at this time."
 
 if (criterion):
   for z in criterion:
@@ -32,9 +34,9 @@ if (criterion):
         for y in dest_lang:
           if dest_lang == 'german' or 'deutsch':
             dest_lang_trans = 'de'
-          if dest_lang == 'italian' or 'italiano':
+          elif dest_lang == 'italian' or 'italiano':
             dest_lang_trans = 'it'
-          if dest_lang == 'english':
+          elif dest_lang == 'english':
             dest_lang_trans = 'en'
 
 st.header('PLEASE ENTER A WORD:')
