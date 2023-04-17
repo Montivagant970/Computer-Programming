@@ -8,7 +8,7 @@ from wiktionaryparser import WiktionaryParser
 translator = Translator()
 parser = WiktionaryParser()
 
-st.header("Speed Reference")
+st.title("Speed Reference")
 
 criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "All"), default=None)
 
@@ -48,7 +48,7 @@ if (user_input):
   for x in criterion:
     if x == "Translation":
       input_trans = translator.translate(user_input, src = source_lang_trans, dest = dest_lang_trans)
-      st.text('Translation:')
+      st.subheader('Translation:')
       st.write(input_trans.text)
 
     if x == "Pronunciation":
@@ -57,41 +57,41 @@ if (user_input):
       tts = gTTS(text = input_trans.text, lang = source_lang_trans)
       tts.save('user_audio.mp3')
 
-      st.text("Pronunciation:")
+      st.subheader("Pronunciation:")
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
     #if x == "Same-Language Definition":
     if x == "Grammatical Information (Conjugations/Declensions)":
       gramm_info = parser.fetch(user_input, source_lang)
-      st.text('Grammatical Information:')
+      st.subheader('Grammatical Information:')
       st.write(gramm_info[0]['definitions'][0]['text'][0])
 
     if x == "Etymology":
       ety_info = parser.fetch(user_input, source_lang)
-      st.text('Etymology:')
+      st.subheader('Etymology:')
       st.write(ety_info[0]['etymology'])
 
     if x == "All":
       #Translator
       input_trans = translator.translate(user_input, src = source_lang_trans, dest = dest_lang_trans)
-      st.text('Translation:')
+      st.subheader('Translation:')
       st.write('Translation:', input_trans.text)
 
       #Pronunciation
       tts = gTTS(text = input_trans.text, lang = source_lang_trans)
       tts.save('user_audio.mp3')
 
-      st.text("Pronunciation:")
+      st.subheader("Pronunciation:")
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
       #Same-Language Definition:
 
       #Grammatical Information:
       gramm_info = parser.fetch(user_input, source_lang)
-      st.text('Grammatical Information:')
+      st.subheader('Grammatical Information:')
       st.write(gramm_info[0]['definitions'][0]['text'][0])
 
       #Etymology:
       ety_info = parser.fetch(user_input, source_lang)
-      st.text('Etymology:')
+      st.subheader('Etymology:')
       st.write(ety_info[0]['etymology'])
