@@ -54,7 +54,7 @@ if (user_input):
       st.write(input_trans.text)
 
     if x == "Pronunciation":
-      tts = gTTS(text = input_trans.text, lang = source_lang_trans)
+      tts = gTTS(text = user_input.text, lang = source_lang_trans)
       tts.save('user_audio.mp3')
 
       st.subheader("Pronunciation:")
