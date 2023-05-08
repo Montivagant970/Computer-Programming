@@ -22,6 +22,7 @@ trans_options = {
 #Nonce Variables
 trans_option = None
 working_lang2 = None
+lang_option = None
 
 #starter material
 st.title("Speed Reference")
