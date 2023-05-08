@@ -26,14 +26,15 @@ else:
 
 source_lang_trans = None
 st.write(source_lang_trans)
-if source_lang == 'german' or 'deutsch' or 'tedesco':
-  source_lang_trans = 'de'
-elif source_lang == 'italian' or 'italiano' or 'italienisch':
-  source_lang_trans = 'it'
-elif source_lang == 'english' or 'englisch' or 'inglese':
-  source_lang_trans = 'en'
-else:
-  st.write("Your language is not available at this time.")
+for y in source_lang:
+  if y == 'german' or 'deutsch' or 'tedesco':
+    source_lang_trans = 'de'
+  elif y == 'italian' or 'italiano' or 'italienisch':
+    source_lang_trans = 'it'
+  elif y == 'english' or 'englisch' or 'inglese':
+    source_lang_trans = 'en'
+  else:
+    st.write("Your language is not available at this time.")
 st.write(source_lang_trans)
 
 if (criterion):
