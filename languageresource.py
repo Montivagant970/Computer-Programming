@@ -35,18 +35,17 @@ else:
   pass
 
 if (criterion):
-  for z in criterion:
-    if z == "Translation" or "All":
-      dest_lang = st.text_input('Into which language would you like to translate?:')
-      dest_lang = dest_lang.lower()
-      if (dest_lang):
-        for y in dest_lang:
-          if y == 'german' or 'deutsch':
-            dest_lang_trans = 'de'
-          elif y == 'italian' or 'italiano':
-            dest_lang_trans = 'it'
-          elif y == 'english':
-            dest_lang_trans = 'en'
+  if criterion == "Translation" or "All":
+    dest_lang = st.text_input('Into which language would you like to translate?:')
+    dest_lang = dest_lang.lower()
+    if (dest_lang):
+      for y in dest_lang:
+        if y == 'german' or 'deutsch':
+          dest_lang_trans = 'de'
+        elif y == 'italian' or 'italiano':
+          dest_lang_trans = 'it'
+        elif y == 'english':
+          dest_lang_trans = 'en'
 
 #url_lang_info = 'https://api.dictionaryapi.dev/api/v2/entries/' + dest_lang + '/' + user_input
 #lang_info_resp = requests.get(url_lang_info)
