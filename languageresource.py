@@ -17,7 +17,8 @@ lang_options = {
 st.title("Speed Reference")
 
 criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "All"), default=None)
-option = st.selectbox("Please, select a language:", lang_options.values())
+option = st.selectbox("Please, select a your working language:", lang_options.values())
+st.write("Your working language is the language of the words you will be writing into the program. For example, if I want to translate the word 'Hund', then the working language is 'German'.")
 
 st.header('PLEASE ENTER A WORD:')
 user_input = st.text_input('')
@@ -55,7 +56,7 @@ if (user_input):
       st.write(input_trans.text)
 
     if x == "Pronunciation":
-      tts = gTTS(text = user_input, lang = source_lang_trans)
+      tts = gTTS(text = user_input, lang = key)
       tts.save('user_audio.mp3')
 
       st.subheader("Pronunciation:")
