@@ -26,9 +26,11 @@ working_lang2 = None
 #starter material
 st.title("Speed Reference")
 
-criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "Example, i.e. Word in Context", "All"), default=None)
-lang_option = st.selectbox("Please, select a your working language:", lang_options.values())
-st.caption("Your working language is the language of the words you will be writing into the program. For example, if I want to translate the word 'Hund', then the working language is 'German'.")
+criterion = st.multiselect("Let's get started! Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "Example, i.e. Word in Context", "All"), default=None)
+
+if criterion:
+  lang_option = st.selectbox("Please, select a your working language:", lang_options.values())
+  st.caption("Your working language is the language of the words you will be writing into the program. For example, if I want to translate the word 'Hund', then the working language is 'German'.")
 
 st.header('PLEASE ENTER A WORD:')
 user_input = st.text_input('')
