@@ -82,6 +82,9 @@ if (user_input):
 
       st.subheader("Pronunciation:")
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
+      
+      gramm_info = parser.fetch(user_input, working_lang2)
+      st.write(gramm_info[0]['pronunciations']['text'][0])
     else:
       pass
 
