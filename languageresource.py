@@ -26,7 +26,7 @@ working_lang2 = None
 #starter material
 st.title("Speed Reference")
 
-criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "All"), default=None)
+criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "Example Sentence, i.e. Word in Context", "All"), default=None)
 lang_option = st.selectbox("Please, select a your working language:", lang_options.values())
 st.caption("Your working language is the language of the words you will be writing into the program. For example, if I want to translate the word 'Hund', then the working language is 'German'.")
 
@@ -102,6 +102,13 @@ if (user_input):
       st.write(ety_info[0]['etymology'])
     else:
       pass
+    
+    if x == "Example, i.e. Word in Context":
+      ex_info = parser.fetch(user_input, working_lang2)
+      st.subheader('Example:')
+      st.write(word[0]['definitions'][0]['examples'][0])
+    else:
+      pass
 
     if x == "All":
       #Translator
@@ -129,5 +136,12 @@ if (user_input):
       ety_info = parser.fetch(user_input, working_lang2)
       st.subheader('Etymology:')
       st.write(ety_info[0]['etymology'])
+      
+      #Example, i.e. Word in Context:
+      ex_info = parser.fetch(user_input, working_lang2)
+      st.subheader('Example:')
+      st.write(word[0]['definitions'][0]['examples'][0])
+      
     else:
       pass
+   
