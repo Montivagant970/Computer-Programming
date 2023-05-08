@@ -34,6 +34,7 @@ if (user_input):
       st.write("Your language is not available at this time.")
 else:
   pass
+st.write(source_lang_trans)
 
 if (criterion):
   if criterion == "Translation" or "All":
