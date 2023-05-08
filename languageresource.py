@@ -7,36 +7,26 @@ from wiktionaryparser import WiktionaryParser
 #tools:
 translator = Translator()
 parser = WiktionaryParser()
+lang_options = {
+  'de' : 'German / Deutsch / Tedesco',
+  'en' : 'English / Englisch / Inglese',
+  'it' : 'Italian / Italienisch / Italiano'
+}
 
 #starter material
 st.title("Speed Reference")
 
 criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "All"), default=None)
+option = st.selectbox("Please, select a language:", lang_options.values())
 
 st.header('PLEASE ENTER A WORD:')
 user_input = st.text_input('')
 
 #Setting Languages:
-source_lang = None
-source_lang_trans = None
-if (user_input):
-  source_lang = st.text_input('What language is the source material?:')
-  source_lang = source_lang.lower()
-  st.write(source_lang)
-  if (source_lang):
-    if source_lang == 'german' or 'deutsch' or 'tedesco':
-      source_lang_trans = 'de'
-    elif source_lang == 'italian' or 'italiano' or 'italienisch':
-      source_lang_trans = 'it'
-    elif source_lang == 'english' or 'englisch' or 'inglese':
-      source_lang_trans = 'en'
-    else:
-      st.write("Your language is not available at this time.")
-  else:
-    pass
-else:
-  pass
-st.write(source_lang_trans)
+if option:
+  key = [k for k, v in lang_options.items() if v == option]
+  choosen_option = key[0]
+  
 
 if (criterion):
   if criterion == "Translation" or "All":
