@@ -8,22 +8,28 @@ from wiktionaryparser import WiktionaryParser
 translator = Translator()
 parser = WiktionaryParser()
 
+#starter material
 st.title("Speed Reference")
 
 criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "All"), default=None)
 
+st.header('PLEASE ENTER A WORD:')
+user_input = st.text_input('')
+
 #Setting Languages:
-source_lang = st.text_input('What language is the source material?:')
-source_lang = source_lang.lower()
-for x in source_lang:
-  if x == 'german' or 'deutsch' or 'tedesco':
-    source_lang_trans = 'de'
-  elif x == 'italian' or 'italiano' or 'italienisch':
-    source_lang_trans = 'it'
-  elif x == 'english' or 'englisch' or 'inglese':
-    source_lang_trans = 'en'
-  else:
-    st.write("Your language is not available at this time.")
+if (user_input):
+  source_lang = st.text_input('What language is the source material?:')
+  source_lang = source_lang.lower()
+  if (source_lang):
+    for x in source_lang:
+      if x == 'german' or 'deutsch' or 'tedesco':
+       source_lang_trans = 'de'
+      elif x == 'italian' or 'italiano' or 'italienisch':
+        source_lang_trans = 'it'
+      elif x == 'english' or 'englisch' or 'inglese':
+        source_lang_trans = 'en'
+      else:
+        st.write("Your language is not available at this time.")
 
 if (criterion):
   for z in criterion:
@@ -38,9 +44,6 @@ if (criterion):
             dest_lang_trans = 'it'
           elif y == 'english':
             dest_lang_trans = 'en'
-
-st.header('PLEASE ENTER A WORD:')
-user_input = st.text_input('')
 
 #url_lang_info = 'https://api.dictionaryapi.dev/api/v2/entries/' + dest_lang + '/' + user_input
 #lang_info_resp = requests.get(url_lang_info)
