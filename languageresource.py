@@ -56,6 +56,9 @@ elif working_lang = 'en':
   working_lang2 = 'english'
 elif working_lang = 'it':
   working_lang2 = 'italian'
+else:
+  pass
+st.write(working_lang2)
 
 
 #url_lang_info = 'https://api.dictionaryapi.dev/api/v2/entries/' + dest_lang + '/' + user_input
