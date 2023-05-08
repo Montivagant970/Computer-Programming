@@ -60,6 +60,8 @@ if (user_input):
       input_trans = translator.translate(user_input, src = working_lang, dest = trans_lang)
       st.subheader('Translation:')
       st.write(input_trans.text)
+    else:
+      pass
 
     if x == "Pronunciation":
       tts = gTTS(text = user_input, lang = working_lang)
@@ -67,26 +69,32 @@ if (user_input):
 
       st.subheader("Pronunciation:")
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
+    else:
+      pass
 
     #if x == "Same-Language Definition":
     if x == "Grammatical Information (Conjugations/Declensions)":
-      gramm_info = parser.fetch(user_input, source_lang)
+      gramm_info = parser.fetch(user_input, working_lang)
       st.subheader('Grammatical Information:')
       st.write(gramm_info[0]['definitions'][0]['text'][0])
+    else:
+      pass
 
     if x == "Etymology":
-      ety_info = parser.fetch(user_input, source_lang)
+      ety_info = parser.fetch(user_input, working_lang)
       st.subheader('Etymology:')
       st.write(ety_info[0]['etymology'])
+    else:
+      pass
 
     if x == "All":
       #Translator
-      input_trans = translator.translate(user_input, src = source_lang_trans, dest = dest_lang_trans)
+      input_trans = translator.translate(user_input, src = working_lang, dest = trans_lang)
       st.subheader('Translation:')
       st.write('Translation:', input_trans.text)
 
       #Pronunciation
-      tts = gTTS(text = input_trans.text, lang = source_lang_trans)
+      tts = gTTS(text = input_trans.text, lang = working_lang)
       tts.save('user_audio.mp3')
 
       st.subheader("Pronunciation:")
@@ -95,11 +103,13 @@ if (user_input):
       #Same-Language Definition:
 
       #Grammatical Information:
-      gramm_info = parser.fetch(user_input, source_lang)
+      gramm_info = parser.fetch(user_input, working_lang)
       st.subheader('Grammatical Information:')
       st.write(gramm_info[0]['definitions'][0]['text'][0])
 
       #Etymology:
-      ety_info = parser.fetch(user_input, source_lang)
+      ety_info = parser.fetch(user_input, working_lang)
       st.subheader('Etymology:')
       st.write(ety_info[0]['etymology'])
+    else:
+      pass
