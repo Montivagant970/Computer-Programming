@@ -33,10 +33,11 @@ user_input = st.text_input('')
 if lang_option:
   key = [k for k, v in lang_options.items() if v == lang_option]
   working_lang = key[0]
-  
-st.write(criterion)
-if criterion == "Translation" or "All":
-  trans_option = st.selectbox("Please, select the language to translate into:", trans_options.values())
+
+for y in criterion:
+  if y == "Translation" or "All":
+    trans_option = st.selectbox("Please, select the language to translate into:", trans_options.values())
+    
 if trans_option:
   key = [j for j, w in trans_options.items() if w == trans_option]
   trans_lang = key[0]
