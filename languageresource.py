@@ -19,6 +19,7 @@ trans_options = {
   'it' : 'Italian / Italienisch / Italiano'
 }
 
+trans_option = None
 #starter material
 st.title("Speed Reference")
 
