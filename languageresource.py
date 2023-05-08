@@ -21,11 +21,11 @@ if (user_input):
   source_lang = st.text_input('What language is the source material?:')
   source_lang = source_lang.lower()
   if (source_lang):
-    if x == 'german' or 'deutsch' or 'tedesco':
+    if source_lang == 'german' or 'deutsch' or 'tedesco':
      source_lang_trans = 'de'
-    elif x == 'italian' or 'italiano' or 'italienisch':
+    elif source_lang == 'italian' or 'italiano' or 'italienisch':
       source_lang_trans = 'it'
-    elif x == 'english' or 'englisch' or 'inglese':
+    elif source_lang == 'english' or 'englisch' or 'inglese':
       source_lang_trans = 'en'
     else:
       st.write("Your language is not available at this time.")
