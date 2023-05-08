@@ -84,7 +84,6 @@ if (user_input):
       gramm_info = parser.fetch(user_input, working_lang2)
       st.write(gramm_info[0]['pronunciations']['text'][0])
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
-    
     else:
       pass
 
@@ -106,7 +105,7 @@ if (user_input):
     if x == "Example, i.e. Word in Context":
       ex_info = parser.fetch(user_input, working_lang2)
       st.subheader('Example:')
-      st.write(word[0]['definitions'][0]['examples'][0])
+      st.write(ex_info[0]['definitions'][0]['examples'][0])
     else:
       pass
 
@@ -140,7 +139,7 @@ if (user_input):
       #Example, i.e. Word in Context:
       ex_info = parser.fetch(user_input, working_lang2)
       st.subheader('Example:')
-      st.write(word[0]['definitions'][0]['examples'][0])
+      st.write(ex_info[0]['definitions'][0]['examples'][0])
       
     else:
       pass
