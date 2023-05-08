@@ -80,8 +80,9 @@ if (user_input):
       tts = gTTS(text = user_input, lang = working_lang)
       tts.save('user_audio.mp3')
 
+      st.subheader("Pronunciation:")
       gramm_info = parser.fetch(user_input, working_lang2)
-      st.subheader("Pronunciation:", gramm_info[0]['pronunciations']['text'][0])
+      st.write(gramm_info[0]['pronunciations']['text'][0])
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
     
     else:
@@ -113,6 +114,8 @@ if (user_input):
       tts.save('user_audio.mp3')
 
       st.subheader("Pronunciation:")
+      gramm_info = parser.fetch(user_input, working_lang2)
+      st.write(gramm_info[0]['pronunciations']['text'][0])
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
       #Same-Language Definition:
