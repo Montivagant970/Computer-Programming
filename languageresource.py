@@ -87,14 +87,14 @@ if (user_input):
 
     #if x == "Same-Language Definition":
     if x == "Grammatical Information (Conjugations/Declensions)":
-      gramm_info = parser.fetch(user_input, working_lang)
+      gramm_info = parser.fetch(user_input, working_lang2)
       st.subheader('Grammatical Information:')
       st.write(gramm_info[0]['definitions'][0]['text'][0])
     else:
       pass
 
     if x == "Etymology":
-      ety_info = parser.fetch(user_input, working_lang)
+      ety_info = parser.fetch(user_input, working_lang2)
       st.subheader('Etymology:')
       st.write(ety_info[0]['etymology'])
     else:
@@ -116,12 +116,12 @@ if (user_input):
       #Same-Language Definition:
 
       #Grammatical Information:
-      gramm_info = parser.fetch(user_input, working_lang)
+      gramm_info = parser.fetch(user_input, working_lang2)
       st.subheader('Grammatical Information:')
       st.write(gramm_info[0]['definitions'][0]['text'][0])
 
       #Etymology:
-      ety_info = parser.fetch(user_input, working_lang)
+      ety_info = parser.fetch(user_input, working_lang2)
       st.subheader('Etymology:')
       st.write(ety_info[0]['etymology'])
     else:
