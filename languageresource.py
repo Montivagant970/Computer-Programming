@@ -36,7 +36,7 @@ if lang_option:
 
 for y in criterion:
   st.write(y)
-  if y == "Translation" or "All":
+  if y == "Translation":
     trans_option = st.selectbox("Please, select the language to translate into:", trans_options.values())
   else:
     pass
