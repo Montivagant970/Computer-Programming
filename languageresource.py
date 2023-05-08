@@ -26,7 +26,7 @@ user_input = st.text_input('')
 #Setting Languages:
 if option:
   key = [k for k, v in lang_options.items() if v == option]
-  choosen_option = key[0]
+  working_lang = key[0]
 st.write(working_lang)
 
 
