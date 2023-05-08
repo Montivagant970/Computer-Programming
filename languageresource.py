@@ -25,9 +25,9 @@ user_input = st.text_input('')
 
 #Setting Languages:
 if option:
-  lang_key = [k for k, v in lang_options.items() if v == option]
+  key = [k for k, v in lang_options.items() if v == option]
   choosen_option = key[0]
-st.write(lang_key)
+st.write(working_lang)
 
 if (criterion):
   if criterion == "Translation" or "All":
@@ -56,7 +56,7 @@ if (user_input):
       st.write(input_trans.text)
 
     if x == "Pronunciation":
-      tts = gTTS(text = user_input, lang = lang_key)
+      tts = gTTS(text = user_input, lang = working_lang)
       tts.save('user_audio.mp3')
 
       st.subheader("Pronunciation:")
