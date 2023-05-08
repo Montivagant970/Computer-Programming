@@ -26,7 +26,7 @@ working_lang2 = None
 #starter material
 st.title("Speed Reference")
 
-criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "Example Sentence, i.e. Word in Context", "All"), default=None)
+criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "Example, i.e. Word in Context", "All"), default=None)
 lang_option = st.selectbox("Please, select a your working language:", lang_options.values())
 st.caption("Your working language is the language of the words you will be writing into the program. For example, if I want to translate the word 'Hund', then the working language is 'German'.")
 
@@ -58,7 +58,6 @@ elif working_lang == 'it':
   working_lang2 = 'italian'
 else:
   pass
-st.write(working_lang2)
 
 
 #url_lang_info = 'https://api.dictionaryapi.dev/api/v2/entries/' + dest_lang + '/' + user_input
