@@ -13,21 +13,32 @@ lang_options = {
   'it' : 'Italian / Italienisch / Italiano'
 }
 
+trans_options = {
+  'de' : 'German / Deutsch / Tedesco',
+  'en' : 'English / Englisch / Inglese',
+  'it' : 'Italian / Italienisch / Italiano'
+}
+
 #starter material
 st.title("Speed Reference")
 
 criterion = st.multiselect("Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "All"), default=None)
-option = st.selectbox("Please, select a your working language:", lang_options.values())
+lang_option = st.selectbox("Please, select a your working language:", lang_options.values())
 st.caption("Your working language is the language of the words you will be writing into the program. For example, if I want to translate the word 'Hund', then the working language is 'German'.")
 
 st.header('PLEASE ENTER A WORD:')
 user_input = st.text_input('')
 
 #Setting Languages:
-if option:
-  key = [k for k, v in lang_options.items() if v == option]
+if lang_option:
+  key = [k for k, v in lang_options.items() if v == lang_option]
   working_lang = key[0]
-st.write(working_lang)
+
+if criterion == "Translation" or "All":
+  trans_option = st.selectbox("Please, select the language to translate into:", trans_options.values())
+if trans_option:
+  key = [j for j, w in trans_options.items() if w == trans_option]
+  trans_lang = key[0]
 
 
 #url_lang_info = 'https://api.dictionaryapi.dev/api/v2/entries/' + dest_lang + '/' + user_input
@@ -39,7 +50,7 @@ st.write(working_lang)
 if (user_input):
   for x in criterion:
     if x == "Translation":
-      input_trans = translator.translate(user_input, src = source_lang_trans, dest = dest_lang_trans)
+      input_trans = translator.translate(user_input, src = working_lang, dest = trans_lang)
       st.subheader('Translation:')
       st.write(input_trans.text)
 
