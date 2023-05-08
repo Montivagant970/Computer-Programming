@@ -34,7 +34,7 @@ if (user_input):
 else:
   pass
 
-if (criterion)
+if (criterion):
   if criterion == "Translation" or "All":
     dest_lang = st.text_input('Into which language would you like to translate?:')
     dest_lang = dest_lang.lower()
