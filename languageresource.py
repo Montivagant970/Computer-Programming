@@ -50,11 +50,11 @@ if trans_option:
   key = [j for j, w in trans_options.items() if w == trans_option]
   trans_lang = key[0]
  
-if working_lang = 'de':
+if working_lang == 'de':
   working_lang2 = 'german'
-elif working_lang = 'en':
+elif working_lang == 'en':
   working_lang2 = 'english'
-elif working_lang = 'it':
+elif working_lang == 'it':
   working_lang2 = 'italian'
 else:
   pass
