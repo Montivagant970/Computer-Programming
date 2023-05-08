@@ -32,6 +32,8 @@ if (user_input):
       source_lang_trans = 'en'
     else:
       st.write("Your language is not available at this time.")
+  else:
+    pass
 else:
   pass
 st.write(source_lang_trans)
