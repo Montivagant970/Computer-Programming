@@ -19,7 +19,10 @@ trans_options = {
   'it' : 'Italian / Italienisch / Italiano'
 }
 
+#Nonce Variables
 trans_option = None
+working_lang2 = None
+
 #starter material
 st.title("Speed Reference")
 
@@ -46,6 +49,13 @@ for y in criterion:
 if trans_option:
   key = [j for j, w in trans_options.items() if w == trans_option]
   trans_lang = key[0]
+ 
+if working_lang = 'de':
+  working_lang2 = 'german'
+elif working_lang = 'en':
+  working_lang2 = 'english'
+elif working_lang = 'it':
+  working_lang2 = 'italian'
 
 
 #url_lang_info = 'https://api.dictionaryapi.dev/api/v2/entries/' + dest_lang + '/' + user_input
