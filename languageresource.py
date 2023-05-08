@@ -25,6 +25,7 @@ else:
   pass
 
 source_lang_trans = None
+st.write(source_lang_trans)
 if source_lang == 'german' or 'deutsch' or 'tedesco':
   source_lang_trans = 'de'
 elif source_lang == 'italian' or 'italiano' or 'italienisch':
