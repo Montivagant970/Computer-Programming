@@ -24,11 +24,12 @@ if (user_input):
 else:
   pass
 
-if source_lang in 'german' or 'deutsch' or 'tedesco':
+source_lang_trans = None
+if source_lang == 'german' or 'deutsch' or 'tedesco':
   source_lang_trans = 'de'
-elif source_lang in 'italian' or 'italiano' or 'italienisch':
+elif source_lang == 'italian' or 'italiano' or 'italienisch':
   source_lang_trans = 'it'
-elif source_lang in 'english' or 'englisch' or 'inglese':
+elif source_lang == 'english' or 'englisch' or 'inglese':
   source_lang_trans = 'en'
 else:
   st.write("Your language is not available at this time.")
