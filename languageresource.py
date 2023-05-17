@@ -105,6 +105,10 @@ if (user_input):
       pass
 
     #if x == "Same-Language Definition":
+    gramm_info = parser.fetch(user_input, working_lang2)
+      st.subheader('Grammatical Information:')
+      st.write(gramm_info[0]['definitions'][0]['text'][1:])
+    
     if x == "Grammatical Information (Conjugations/Declensions)":
       gramm_info = parser.fetch(user_input, working_lang2)
       st.subheader('Grammatical Information:')
