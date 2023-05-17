@@ -31,7 +31,7 @@ trans_lang = None
 #starter material
 st.title("Multilingual Speed Reference")
 
-criterion = st.multiselect("Let's get started! Which resources do you need?", ("Translation", "Pronunciation", "Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "Example, i.e. Word in Context", "All"), default=None)
+criterion = st.multiselect("Let's get started! Which resources do you need?", ("Translation", "Pronunciation", "Definition", "Grammatical Information, i.e. Conjugations/Declensions", "Etymology", "Example, i.e. Word in Context", "All"), default=None)
 if criterion:
   for x in criterion:
     if x == "All":
