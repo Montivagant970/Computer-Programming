@@ -31,7 +31,7 @@ trans_lang = None
 #starter material
 st.title("Multilingual Learning Reference")
 
-criterion = st.multiselect("Let's get started! Which resources do you need?", ("Translation", "Pronunciation", "Definition", "Etymology", "Grammatical Information, i.e. Conjugations/Declensions", "Example, i.e. Word in Context", "All"), default=None)
+criterion = st.multiselect("Let's get started! Which resources do you need?", ("Translation", "Pronunciation", "Definition", "Etymology", "Grammatical Information, i.e. Conjugations/Declensions/Gender", "Example, i.e. Word in Context", "All"), default=None)
 if criterion:
   for x in criterion:
     if x == "All":
@@ -116,7 +116,7 @@ if (user_input):
     else:
       pass
     
-    if x == "Grammatical Information, i.e. Conjugations/Declensions":
+    if x == "Grammatical Information, i.e. Conjugations/Declensions/Gender":
       gramm_info = parser.fetch(user_input, working_lang2)
       st.subheader('Grammatical Information:')
       try:
