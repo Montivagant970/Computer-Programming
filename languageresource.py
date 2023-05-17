@@ -27,7 +27,7 @@ working_lang = None
 user_input = None
 
 #starter material
-st.title("Speed Reference")
+st.title("Multilingual Speed Reference")
 
 criterion = st.multiselect("Let's get started! Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "Example, i.e. Word in Context", "All"), default=None)
 
@@ -65,6 +65,14 @@ elif working_lang == 'it':
 else:
   pass
 
+if trans_lang == 'de':
+  trans_lang2 = 'german'
+elif trans_lang == 'en':
+  trans_lang2 = 'english'
+elif trans_lang == 'it':
+  trans_lang2 = 'italian'
+else:
+  pass
 
 #url_lang_info = 'https://api.dictionaryapi.dev/api/v2/entries/' + dest_lang + '/' + user_input
 #lang_info_resp = requests.get(url_lang_info)
@@ -125,7 +133,7 @@ if (user_input):
       tts.save('user_audio.mp3')
 
       st.subheader("Pronunciation:")
-      gramm_info = parser.fetch(user_input, working_lang2)
+      gramm_info = parser.fetch(user_input, trans_lang2)
       st.write(gramm_info[0]['pronunciations']['text'][0])
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
