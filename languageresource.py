@@ -36,6 +36,8 @@ if criterion:
   for x in criterion:
     if x == "All":
       st.caption("TIP: if you selected 'All,' please deselect all other options, as they are superfluous.")
+else:
+  pass
 
 if criterion:
   lang_option = st.selectbox("Please enter your Working Language?:", lang_options.values())
