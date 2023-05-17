@@ -101,7 +101,7 @@ if (user_input):
       try:
         st.write(gramm_info[0]['pronunciations']['text'][0])
       except:
-        st.write('No IPA transcription is available for this word.")
+        st.write('No IPA transcription is available for this word.')
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
     else:
       pass
@@ -112,7 +112,7 @@ if (user_input):
       try:
         st.write(def_info[0]['definitions'][0]['text'][1:])
       except:
-        st.write('No definition is available for this word.")
+        st.write('No definition is available for this word.')
     else:
       pass
     
@@ -122,7 +122,7 @@ if (user_input):
       try:
         st.write(gramm_info[0]['definitions'][0]['text'][0])
       except:
-        st.write('No grammatical information is available for this word.")
+        st.write('No grammatical information is available for this word.')
     else:
       pass
 
@@ -132,7 +132,7 @@ if (user_input):
       try:
         st.write(ety_info[0]['etymology'])
       except:
-        st.write('No etymological information is available for this word.")
+        st.write('No etymological information is available for this word.')
     else:
       pass
     
@@ -142,7 +142,7 @@ if (user_input):
       try:
         st.write(ex_info[0]['definitions'][0]['examples'][0])
       except:
-        st.write('No example is available for this word.")
+        st.write('No example is available for this word.')
     else:
       pass
 
@@ -161,7 +161,7 @@ if (user_input):
       try:
         st.write(all_info[0]['pronunciations']['text'][0])
       except:
-        st.write('No IPA transcription is available for this word.")
+        st.write('No IPA transcription is available for this word.')
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
       #Definition:
@@ -169,21 +169,21 @@ if (user_input):
       try:
         st.write(all_info[0]['definitions'][0]['text'][1:])
       except:
-        st.write('No definition is available for this word.")
+        st.write('No definition is available for this word.')
       
       #Grammatical Information:
       st.subheader('Grammatical Information:')
       try:
         st.write(all_info[0]['definitions'][0]['text'][0])
       except:
-        st.write('No grammatical information is available for this word.")
+        st.write('No grammatical information is available for this word.')
                  
       #Etymology:
       st.subheader('Etymology:')
       try:
         st.write(all_info[0]['etymology'])
       except:
-        st.write('No etymological information is available for this word.")
+        st.write('No etymological information is available for this word.')
       
       #Example, i.e. Word in Context:
       st.subheader('Example:')
