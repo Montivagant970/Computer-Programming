@@ -106,7 +106,7 @@ if (user_input):
     if x == "Definition":
       def_info = parser.fetch(user_input, working_lang2)
       st.subheader('Definition:')
-      st.write(gramm_info[0]['definitions'][0]['text'][1:])
+      st.write(def_info[0]['definitions'][0]['text'][1:])
     else:
       pass
     
