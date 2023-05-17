@@ -110,7 +110,7 @@ if (user_input):
     else:
       pass
     
-    if x == "Grammatical Information (Conjugations/Declensions)":
+    if x == "Grammatical Information, i.e. Conjugations/Declensions":
       gramm_info = parser.fetch(user_input, working_lang2)
       st.subheader('Grammatical Information:')
       st.write(gramm_info[0]['definitions'][0]['text'][0])
