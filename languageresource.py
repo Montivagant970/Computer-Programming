@@ -98,7 +98,10 @@ if (user_input):
 
       st.subheader("Pronunciation:")
       gramm_info = parser.fetch(user_input, working_lang2)
-      st.write(gramm_info[0]['pronunciations']['text'][0])
+      try:
+        st.write(gramm_info[0]['pronunciations']['text'][0])
+      except:
+        st.write('No IPA transcription is available for this word.")
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
     else:
       pass
@@ -106,28 +109,40 @@ if (user_input):
     if x == "Definition":
       def_info = parser.fetch(user_input, working_lang2)
       st.subheader('Definition:')
-      st.write(def_info[0]['definitions'][0]['text'][1:])
+      try:
+        st.write(def_info[0]['definitions'][0]['text'][1:])
+      except:
+        st.write('No definition is available for this word.")
     else:
       pass
     
     if x == "Grammatical Information, i.e. Conjugations/Declensions":
       gramm_info = parser.fetch(user_input, working_lang2)
       st.subheader('Grammatical Information:')
-      st.write(gramm_info[0]['definitions'][0]['text'][0])
+      try:
+        st.write(gramm_info[0]['definitions'][0]['text'][0])
+      except:
+        st.write('No grammatical information is available for this word.")
     else:
       pass
 
     if x == "Etymology":
       ety_info = parser.fetch(user_input, working_lang2)
       st.subheader('Etymology:')
-      st.write(ety_info[0]['etymology'])
+      try:
+        st.write(ety_info[0]['etymology'])
+      except:
+        st.write('No etymological information is available for this word.")
     else:
       pass
     
     if x == "Example, i.e. Word in Context":
       ex_info = parser.fetch(user_input, working_lang2)
       st.subheader('Example:')
-      st.write(ex_info[0]['definitions'][0]['examples'][0])
+      try:
+        st.write(ex_info[0]['definitions'][0]['examples'][0])
+      except:
+        st.write('No example is available for this word.")
     else:
       pass
 
@@ -143,20 +158,32 @@ if (user_input):
 
       st.subheader("Pronunciation:")
       all_info = parser.fetch(user_input, working_lang2)
-      st.write(all_info[0]['pronunciations']['text'][0])
+      try:
+        st.write(all_info[0]['pronunciations']['text'][0])
+      except:
+        st.write('No IPA transcription is available for this word.")
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
       #Definition:
       st.subheader('Definition:')
-      st.write(all_info[0]['definitions'][0]['text'][1:])
+      try:
+        st.write(all_info[0]['definitions'][0]['text'][1:])
+      except:
+        st.write('No definition is available for this word.")
       
       #Grammatical Information:
       st.subheader('Grammatical Information:')
-      st.write(all_info[0]['definitions'][0]['text'][0])
-
+      try:
+        st.write(all_info[0]['definitions'][0]['text'][0])
+      except:
+        st.write('No grammatical information is available for this word.")
+                 
       #Etymology:
       st.subheader('Etymology:')
-      st.write(all_info[0]['etymology'])
+      try:
+        st.write(all_info[0]['etymology'])
+      except:
+        st.write('No etymological information is available for this word.")
       
       #Example, i.e. Word in Context:
       st.subheader('Example:')
