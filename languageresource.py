@@ -79,10 +79,15 @@ else:
   pass
 
 #Program:
+def Translator(src1, dest1):
+  input_trans = translator.translate(user_input, src = src1, dest = dest1)
+  return input_trans
+  
 if (user_input):
   for x in criterion:
     if x == "Translation":
-      input_trans = translator.translate(user_input, src = working_lang, dest = trans_lang)
+      Translator(working_lang, trans_lang)
+      #input_trans = translator.translate(user_input, src = working_lang, dest = trans_lang)
       st.subheader('Translation:')
       st.write(input_trans.text)
     else:
