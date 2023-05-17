@@ -31,7 +31,7 @@ trans_lang = None
 #starter material
 st.title("Multilingual Speed Reference")
 
-criterion = st.multiselect("Let's get started! Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "Example, i.e. Word in Context", "All"), default=None)
+criterion = st.multiselect("Let's get started! Which resources do you need?", ("Translation", "Pronunciation", "Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "Example, i.e. Word in Context", "All"), default=None)
 if criterion == "All":
   st.caption("TIP: if you selected 'All,' please deselect all other options.")
 
@@ -104,8 +104,8 @@ if (user_input):
     else:
       pass
 
-    if x == "Same-Language Definition":
-      gramm_info = parser.fetch(user_input, working_lang2)
+    if x == "Definition":
+      def_info = parser.fetch(user_input, working_lang2)
       st.subheader('Definition:')
       st.write(gramm_info[0]['definitions'][0]['text'][1:])
     else:
@@ -149,8 +149,11 @@ if (user_input):
       st.write(gramm_info[0]['pronunciations']['text'][0])
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
-      #Same-Language Definition:
-
+      #Definition:
+      def_info = parser.fetch(user_input, working_lang2)
+      st.subheader('Definition:')
+      st.write(deg_info[0]['definitions'][0]['text'][1:])
+      
       #Grammatical Information:
       gramm_info = parser.fetch(user_input, working_lang2)
       st.subheader('Grammatical Information:')
