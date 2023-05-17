@@ -32,6 +32,8 @@ trans_lang = None
 st.title("Multilingual Speed Reference")
 
 criterion = st.multiselect("Let's get started! Which resources do you need?", ("Translation", "Pronunciation", "Same-Language Definition", "Grammatical Information (Conjugations/Declensions)", "Etymology", "Example, i.e. Word in Context", "All"), default=None)
+if criterion = "All":
+  st.caption("TIP: if you selected 'All,' please deselect all other options.")
 
 if criterion:
   lang_option = st.selectbox("Please enter your Working Language?:", lang_options.values())
