@@ -41,7 +41,7 @@ else:
 
 if criterion:
   lang_option = st.selectbox("Please enter your Working Language?:", lang_options.values())
-  st.caption("TIP: your Working Language is the language of the words you will be inserting into the program. For example, if I want to translate the word 'Hund', then the Working Language is 'German'.")
+  st.caption("TIP: your Working Language is the language of the words you will be inserting into the program. For example, if I want to translate the word 'Hund,' then the Working Language is 'German.'")
 
 if lang_option:
   st.header('PLEASE ENTER A WORD:')
