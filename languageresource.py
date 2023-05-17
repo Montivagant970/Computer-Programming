@@ -29,7 +29,7 @@ trans_lang2 = None
 trans_lang = None
 
 #starter material
-st.title("Multilingual Speed Reference")
+st.title("Multilingual Learning Reference")
 
 criterion = st.multiselect("Let's get started! Which resources do you need?", ("Translation", "Pronunciation", "Definition", "Grammatical Information, i.e. Conjugations/Declensions", "Etymology", "Example, i.e. Word in Context", "All"), default=None)
 if criterion:
