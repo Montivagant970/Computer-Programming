@@ -160,11 +160,10 @@ if (user_input):
       
       #Example, i.e. Word in Context:
       st.subheader('Example:')
-      for x in all_info[0]['definitions'][0]['examples'][0]:
-        if x == None:
-          st.write('No examples are available for this word.')
-        else:
-          st.write(all_info[0]['definitions'][0]['examples'][0])
+      try:
+        st.write(all_info[0]['definitions'][0]['examples'][0])
+      except:
+        st.write('No examples are available for this word.')
       
     else:
       pass
