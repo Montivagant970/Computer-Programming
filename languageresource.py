@@ -78,12 +78,7 @@ elif trans_lang == 'it':
 else:
   pass
 
-#url_lang_info = 'https://api.dictionaryapi.dev/api/v2/entries/' + dest_lang + '/' + user_input
-#lang_info_resp = requests.get(url_lang_info)
-#json.loads(lang_info_resp.text)
-
-#TO ADD SPEECH TO TEXT 
-
+#Program:
 if (user_input):
   for x in criterion:
     if x == "Translation":
@@ -133,39 +128,35 @@ if (user_input):
       pass
 
     if x == "All":
-      #Translator
+      #Translator:
       input_trans = translator.translate(user_input, src = working_lang, dest = trans_lang)
       st.subheader('Translation:')
       st.write('Translation:', input_trans.text)
       
-      #Pronunciation
+      #Pronunciation:
       tts = gTTS(text = user_input, lang = working_lang)
       tts.save('user_audio.mp3')
 
       st.subheader("Pronunciation:")
-      gramm_info = parser.fetch(user_input, working_lang2)
-      st.write(gramm_info[0]['pronunciations']['text'][0])
+      all_info = parser.fetch(user_input, working_lang2)
+      st.write(all_info[0]['pronunciations']['text'][0])
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
       #Definition:
-      def_info = parser.fetch(user_input, working_lang2)
       st.subheader('Definition:')
-      st.write(def_info[0]['definitions'][0]['text'][1:])
+      st.write(all_info[0]['definitions'][0]['text'][1:])
       
       #Grammatical Information:
-      gramm_info = parser.fetch(user_input, working_lang2)
       st.subheader('Grammatical Information:')
-      st.write(gramm_info[0]['definitions'][0]['text'][0])
+      st.write(all_info[0]['definitions'][0]['text'][0])
 
       #Etymology:
-      ety_info = parser.fetch(user_input, working_lang2)
       st.subheader('Etymology:')
-      st.write(ety_info[0]['etymology'])
+      st.write(all_info[0]['etymology'])
       
       #Example, i.e. Word in Context:
-      ex_info = parser.fetch(user_input, working_lang2)
       st.subheader('Example:')
-      st.write(ex_info[0]['definitions'][0]['examples'][0])
+      st.write(all_info[0]['definitions'][0]['examples'][0])
       
     else:
       pass
