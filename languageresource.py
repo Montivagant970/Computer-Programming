@@ -26,6 +26,7 @@ lang_option = None
 working_lang = None
 user_input = None
 trans_lang2 = None
+trans_lang = None
 
 #starter material
 st.title("Multilingual Speed Reference")
