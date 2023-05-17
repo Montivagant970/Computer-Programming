@@ -84,8 +84,7 @@ else:
 if (user_input):
   for x in criterion:
     if x == "Translation":
-      Translator(working_lang, trans_lang)
-      #input_trans = translator.translate(user_input, src = working_lang, dest = trans_lang)
+      input_trans = translator.translate(user_input, src = working_lang, dest = trans_lang)
       st.subheader('Translation:')
       st.write(input_trans.text)
     else:
