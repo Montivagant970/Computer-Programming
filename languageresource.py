@@ -137,15 +137,13 @@ if (user_input):
       input_trans = translator.translate(user_input, src = working_lang, dest = trans_lang)
       st.subheader('Translation:')
       st.write('Translation:', input_trans.text)
-      input_trans_text = input_trans.text
-      input_trans_lower = input_trans_text.lower()
       
       #Pronunciation
-      tts = gTTS(text = input_trans.text, lang = trans_lang)
+      tts = gTTS(text = input_trans.text, lang = working_lang)
       tts.save('user_audio.mp3')
 
       st.subheader("Pronunciation:")
-      gramm_info = parser.fetch(input_trans_lower, trans_lang2)
+      gramm_info = parser.fetch(user_input, working_lang2)
       st.write(gramm_info[0]['pronunciations']['text'][0])
       st.audio(data = 'user_audio.mp3', format = 'audio/mp3', start_time=0)
 
