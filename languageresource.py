@@ -45,7 +45,7 @@ if criterion:
 
 if lang_option:
   st.header('PLEASE ENTER A WORD:')
-  user_input = st.text_input('TIP: only German nouns should be capitalized; all other types of words and languages should be written in lower case.')
+  user_input = st.text_input('TIP: only German nouns should be capitalized; all other languages and types of words should be written in lower case.')
 
 #Setting Languages:
 if lang_option:
