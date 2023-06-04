@@ -1,4 +1,5 @@
 import streamlit as st
+import json, requests
 from googletrans import Translator
 from gtts import gTTS
 from wiktionaryparser import WiktionaryParser
